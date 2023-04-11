@@ -2,7 +2,7 @@ from mininet.topo import Topo
 from mininet.net import Mininet
 from mininet.link import TCLink
 from mininet.log import setLogLevel
-from mininet.node import OVSKernelSwitch, RemoteController
+from mininet.node import OVSKernelSwitch, RemoteController, CPULimitedHost
 from time import sleep
 
 from datetime import datetime
@@ -90,9 +90,9 @@ def startNetwork():
     print ("Starting Network")
     topo = MyTopo()
     net = Mininet( topo=topo, host=CPULimitedHost, link=TCLink, controller=None )
-    net.addController( 'c0', controller=RemoteController, ip='192.168.43.55', port=6653 )
+    net.addController( 'c0', controller=RemoteController, ip='192.168.1.102', port=6653 )
 
-    c0 = RemoteController('c0', ip='192.168.0.102', port=6653)
+    c0 = RemoteController('c0', ip='192.168.1.102', port=6653)
     net = Mininet(topo=topo, link=TCLink, controller=c0)
 
     net.start()
