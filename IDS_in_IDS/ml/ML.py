@@ -138,9 +138,9 @@ class MachineLearning():
         
 def main():
     
-#     start_script = datetime.now()
+    start_script = datetime.now()
     
-#     ml = MachineLearning()
+    ml = MachineLearning()
     
 #     start = datetime.now()
 #     ml.LR()
