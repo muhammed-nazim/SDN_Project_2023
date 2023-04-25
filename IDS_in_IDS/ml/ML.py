@@ -33,13 +33,13 @@ class MachineLearning():
 
         self.X_flow_train, self.X_flow_test, self.y_flow_train, self.y_flow_test = train_test_split(self.X_flow, self.y_flow, test_size=0.25, random_state=0)
 
-#     def LR(self):
+    def LR(self):
         
-#         print("------------------------------------------------------------------------------")
-#         print("Logistic Regression ...")
+        print("------------------------------------------------------------------------------")
+        print("Logistic Regression ...")
 
-#         self.classifier = LogisticRegression(solver='liblinear', random_state=0)
-#         self.Confusion_matrix()
+        self.classifier = LogisticRegression(solver='liblinear', random_state=0)
+        self.Confusion_matrix()
         
     def KNN(self):
 
@@ -142,10 +142,10 @@ def main():
     
     ml = MachineLearning()
     
-#     start = datetime.now()
-#     ml.LR()
-#     end = datetime.now()
-#     print("LEARNING and PREDICTING Time: ", (end-start)) 
+    start = datetime.now()
+    ml.LR()
+    end = datetime.now()
+    print("LEARNING and PREDICTING Time: ", (end-start)) 
     
     start = datetime.now()
     ml.KNN()
