@@ -29,7 +29,7 @@ class MachineLearning():
         self.X_flow = self.flow_dataset.iloc[:, :-1].values
         self.X_flow = self.X_flow.astype('float64')
 
-        self.y_flow = self.flow_dataset.iloc[:, -1].values
+        self.y_flow = self.flow_dataset.iloc[:, :-1].values
         self.y_flow = self.y_flow.astype('float64')
 
         self.X_flow_train, self.X_flow_test, self.y_flow_train, self.y_flow_test = train_test_split(self.X_flow, self.y_flow, test_size=0.25, random_state=0)
@@ -96,7 +96,8 @@ class MachineLearning():
         #cm = confusion_matrix(self.y_flow_test, self.y_flow_pred)
 #         cm[][] = confusion_matrix(self.y_flow_test, self.y_flow_pred)
 #         print(cm)
-        cm = confusion_matrix(self.y_flow_test, self.y_flow_pred)
+        cm_1 = confusion_matrix(self.y_flow_test, self.y_flow_pred)
+        cm = np.array(cm).reshape((2, 2))
 #         c, m = cm.shape
 #         if c == 1 and m == 1:
 #             cm = [[cm[0][0]]]
