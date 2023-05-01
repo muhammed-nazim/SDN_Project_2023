@@ -95,7 +95,7 @@ class MachineLearning():
         #cm = confusion_matrix(self.y_flow_test, self.y_flow_pred)
 #         cm[][] = confusion_matrix(self.y_flow_test, self.y_flow_pred)
 #         print(cm)
-        cm = confusion_matrix(self.y_flow_test, self.y_flow_pred)
+        cm[[]] = confusion_matrix(self.y_flow_test, self.y_flow_pred)
 #         c, m = cm.shape
 #         if c == 1 and m == 1:
 #             cm = [[cm[0][0]]]
