@@ -93,16 +93,11 @@ class MachineLearning():
         print("------------------------------------------------------------------------------")
 
         print("confusion matrix")
+        num_classes = len(np.unique(self.y_flow_test))
+        cm = [[0] * num_classes for _ in range(num_classes)]
+        for true_label, pred_label in zip(self.y_flow_test, self.y_flow_pred):
+            cm[true_label][pred_label] += 1
         #cm = confusion_matrix(self.y_flow_test, self.y_flow_pred)
-#         cm[][] = confusion_matrix(self.y_flow_test, self.y_flow_pred)
-#         print(cm)
-        cm_1 = confusion_matrix(self.y_flow_test, self.y_flow_pred)
-        cm = np.array(cm).reshape((2, 2))
-#         c, m = cm.shape
-#         if c == 1 and m == 1:
-#             cm = [[cm[0][0]]]
-#         elif c == 1 or m == 1:
-#             cm = cm.tolist()
         print(cm)
 
         acc = accuracy_score(self.y_flow_test, self.y_flow_pred)
